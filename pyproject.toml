@@ -9,6 +9,8 @@ packages = [{include = "url_shortener"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 django = "^4.1.5"
+djangorestframework = "^3.14.0"
+pyshorteners = "^1.0.1"
 
 
 [build-system]
