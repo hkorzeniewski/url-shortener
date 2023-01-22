@@ -12,11 +12,19 @@ def decode_url(request, url):
 
     shortener = pyshorteners.Shortener()
     shortened_url = shortener.chilpit.short(f'{url}')
+    data_to_dump = {
+        'original_url': url,
+        'shortened_url': shortened_url,
+    }
     print(shortened_url)
-    return HttpResponse(json.dumps(shortened_url), content_type='application/json')
+    return HttpResponse(json.dumps(data_to_dump), content_type='application/json')
 
 def encode_url(request, url):
 
     shortener = pyshorteners.Shortener()
     expanded_url = shortener.chilpit.expand(f'{url}')
-    return HttpResponse(json.dumps(expanded_url), content_type='application/json')
+    data_to_dump = {
+        'original_url': url,
+        'expanded_url': expanded_url,
+    }
+    return HttpResponse(json.dumps(data_to_dump), content_type='application/json')
