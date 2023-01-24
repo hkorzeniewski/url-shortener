@@ -21,14 +21,14 @@ redis_instance = redis.StrictRedis(host=settings.REDIS_HOST,
 @csrf_exempt
 def encode_url(request, url):
     
-    shortened_url = redis_instance.get(url)
+    shortened_url = redis_instance.get(url).decode("utf-8")
     if shortened_url is None:
         shortener = pyshorteners.Shortener()
         shortened_url = shortener.chilpit.short(f'{url}')
         redis_instance.set(url, shortened_url)    
     data_to_dump = {
         'original_url': url,
-        'shortened_url': shortened_url.decode("utf-8"),
+        'shortened_url': shortened_url,
     }
     # print(shortened_url)
     return HttpResponse(json.dumps(data_to_dump), content_type='application/json')
@@ -38,7 +38,7 @@ def encode_url(request, url):
 @csrf_exempt
 def decode_url(request, url):
 
-    original_url = redis_instance.get(url)
+    original_url = redis_instance.get(url).decode("utf-8")
     if original_url is None:
         shortener = pyshorteners.Shortener()
         original_url = shortener.chilpit.expand(f'{url}')
@@ -46,6 +46,6 @@ def decode_url(request, url):
 
     data_to_dump = {
         'shortened_url': url,
-        'original_url': original_url.decode("utf-8"),
+        'original_url': original_url,
     }
     return HttpResponse(json.dumps(data_to_dump), content_type='application/json')
