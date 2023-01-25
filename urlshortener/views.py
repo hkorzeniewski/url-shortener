@@ -13,8 +13,7 @@ import json
 import redis
 
 
-redis_instance = redis.StrictRedis(host=settings.REDIS_HOST,
-                                   port=settings.REDIS_PORT, db=0)
+redis_instance = redis.StrictRedis(settings.REDIS_URL, db=0)
 # Create your views here.
 
 # @api_view(['POST'])
