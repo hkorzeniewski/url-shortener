@@ -13,18 +13,16 @@ import json
 import redis
 
 
-redis_instance = redis.StrictRedis(settings.REDIS_URL, db=0)
 # Create your views here.
 
 # @api_view(['POST'])
 @csrf_exempt
 def encode_url(request, url):
-    
-    shortened_url = redis_instance.get(url).decode("utf-8")
+    shortened_url = cache.get(url)
     if shortened_url is None:
         shortener = pyshorteners.Shortener()
         shortened_url = shortener.chilpit.short(f'{url}')
-        redis_instance.set(url, shortened_url)    
+        cache.set(url, shortened_url)    
     data_to_dump = {
         'original_url': url,
         'shortened_url': shortened_url,
@@ -37,11 +35,11 @@ def encode_url(request, url):
 @csrf_exempt
 def decode_url(request, url):
 
-    original_url = redis_instance.get(url).decode("utf-8")
+    original_url = cache.get(url)
     if original_url is None:
         shortener = pyshorteners.Shortener()
         original_url = shortener.chilpit.expand(f'{url}')
-        redis_instance.set(url, original_url)
+        cache.set(url, original_url)
 
     data_to_dump = {
         'shortened_url': url,
