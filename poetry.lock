@@ -64,6 +64,19 @@ docs = ["furo (>=2021.8.17b43,<2021.9.0)", "sphinx (>=3.5.0)", "sphinx-notfound-
 testing = ["coverage[toml] (>=5.0a4)", "pytest (>=4.6.11)"]
 
 [[package]]
+name = "django-fakeredis"
+version = "0.1.2"
+description = "Easier to use fakeredis in Django."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+django-redis = "*"
+fakeredis = "*"
+redis = "*"
+
+[[package]]
 name = "django-redis"
 version = "5.2.0"
 description = "Full featured redis cache backend for Django."
@@ -91,20 +104,28 @@ django = ">=3.0"
 pytz = "*"
 
 [[package]]
+name = "fakeredis"
+version = "2.6.0"
+description = "Fake implementation of redis API for testing purposes."
+category = "main"
+optional = false
+python-versions = ">=3.8.1,<4.0"
+
+[package.dependencies]
+redis = "<4.5"
+sortedcontainers = ">=2.4.0,<3.0.0"
+
+[package.extras]
+json = ["jsonpath-ng (>=1.5,<2.0)"]
+lua = ["lupa (>=1.14,<2.0)"]
+
+[[package]]
 name = "idna"
 version = "3.4"
 description = "Internationalized Domain Names in Applications (IDNA)"
 category = "main"
 optional = false
 python-versions = ">=3.5"
-
-[[package]]
-name = "pymemcache"
-version = "4.0.0"
-description = "A comprehensive, fast, pure Python memcached client"
-category = "main"
-optional = false
-python-versions = ">=3.7"
 
 [[package]]
 name = "pyshorteners"
@@ -163,6 +184,14 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
+name = "sortedcontainers"
+version = "2.4.0"
+description = "Sorted Containers -- Sorted List, Sorted Dict, Sorted Set"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "sqlparse"
 version = "0.4.3"
 description = "A non-validating SQL parser."
@@ -194,7 +223,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "ce828e2f5eaa7c4611e283178b53a90c09d07ab12fb19aeef3d8a28df8eaa87d"
+content-hash = "40e8aaeb7c04c51c755cb8d623f7fcf416c479b5ce1f74bd803cf2d461c49f51"
 
 [metadata.files]
 asgiref = [
@@ -307,6 +336,10 @@ django-environ = [
     {file = "django-environ-0.9.0.tar.gz", hash = "sha256:bff5381533056328c9ac02f71790bd5bf1cea81b1beeb648f28b81c9e83e0a21"},
     {file = "django_environ-0.9.0-py2.py3-none-any.whl", hash = "sha256:f21a5ef8cc603da1870bbf9a09b7e5577ab5f6da451b843dbcc721a7bca6b3d9"},
 ]
+django-fakeredis = [
+    {file = "django-fakeredis-0.1.2.tar.gz", hash = "sha256:b135731b161837c20bca9db20b561462bee5d248c41a6b8ae7c70e9d7a1d527a"},
+    {file = "django_fakeredis-0.1.2-py3-none-any.whl", hash = "sha256:3a4372bb9459b2332a387ae06e0d117b982280206a74f54d79864cc2e3a8a869"},
+]
 django-redis = [
     {file = "django-redis-5.2.0.tar.gz", hash = "sha256:8a99e5582c79f894168f5865c52bd921213253b7fd64d16733ae4591564465de"},
     {file = "django_redis-5.2.0-py3-none-any.whl", hash = "sha256:1d037dc02b11ad7aa11f655d26dac3fb1af32630f61ef4428860a2e29ff92026"},
@@ -315,13 +348,13 @@ djangorestframework = [
     {file = "djangorestframework-3.14.0-py3-none-any.whl", hash = "sha256:eb63f58c9f218e1a7d064d17a70751f528ed4e1d35547fdade9aaf4cd103fd08"},
     {file = "djangorestframework-3.14.0.tar.gz", hash = "sha256:579a333e6256b09489cbe0a067e66abe55c6595d8926be6b99423786334350c8"},
 ]
+fakeredis = [
+    {file = "fakeredis-2.6.0-py3-none-any.whl", hash = "sha256:94c7867edc259b81c55b93902e81a727cc1986ba09de3fcf9df51a3ad8e29b03"},
+    {file = "fakeredis-2.6.0.tar.gz", hash = "sha256:3f8f72c5b990a70ae69444dd1cfe0c9805811a53752d3d21fdcda29255b00e51"},
+]
 idna = [
     {file = "idna-3.4-py3-none-any.whl", hash = "sha256:90b77e79eaa3eba6de819a0c442c0b4ceefc341a7a2ab77d7562bf49f425c5c2"},
     {file = "idna-3.4.tar.gz", hash = "sha256:814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"},
-]
-pymemcache = [
-    {file = "pymemcache-4.0.0-py2.py3-none-any.whl", hash = "sha256:f507bc20e0dc8d562f8df9d872107a278df049fa496805c1431b926f3ddd0eab"},
-    {file = "pymemcache-4.0.0.tar.gz", hash = "sha256:27bf9bd1bbc1e20f83633208620d56de50f14185055e49504f4f5e94e94aff94"},
 ]
 pyshorteners = [
     {file = "pyshorteners-1.0.1.tar.gz", hash = "sha256:22045c997c4283124768c165623a267cf9ba2a7d416101e2e5fccfc244d34544"},
@@ -337,6 +370,10 @@ redis = [
 requests = [
     {file = "requests-2.28.2-py3-none-any.whl", hash = "sha256:64299f4909223da747622c030b781c0d7811e359c37124b4bd368fb8c6518baa"},
     {file = "requests-2.28.2.tar.gz", hash = "sha256:98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"},
+]
+sortedcontainers = [
+    {file = "sortedcontainers-2.4.0-py2.py3-none-any.whl", hash = "sha256:a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0"},
+    {file = "sortedcontainers-2.4.0.tar.gz", hash = "sha256:25caa5a06cc30b6b83d11423433f65d1f9d76c4c6a0c90e3379eaa43b9bfdb88"},
 ]
 sqlparse = [
     {file = "sqlparse-0.4.3-py3-none-any.whl", hash = "sha256:0323c0ec29cd52bceabc1b4d9d579e311f3e4961b98d174201d5622a23b85e34"},
