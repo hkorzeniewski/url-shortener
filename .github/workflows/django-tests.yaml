@@ -41,7 +41,7 @@ jobs:
             poetry run isort .
       - name: Run bandit
         run: |
-            poetry run bandit -r
+            poetry run bandit -r .
       - name: Run redis
         run: |
             redis-server
