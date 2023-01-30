@@ -45,13 +45,9 @@ jobs:
       - name: Run bandit
         run: |
             poetry run bandit -r .
-      - name: Run redis 
-        env:
-            DJANGO_SECRET_KEY: random_key
-            DEBUG: True
-        run: |
-            redis-server start
       - name: Run tests
-       
+        env:
+          DJANGO_SECRET_KEY: random_key
+          DEBUG: True
         run: |
             poetry run coverage run manage.py test
