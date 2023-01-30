@@ -47,6 +47,8 @@ jobs:
             poetry run bandit -r .
       - name: Run tests
         env:
+          REDIS_HOST: 127.0.0.1
+          REDIS_PORT: 6379
           DJANGO_SECRET_KEY: random_key
           DEBUG: True
         run: |
