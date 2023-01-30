@@ -167,3 +167,5 @@ cython_debug/
 data
 
 static_files
+
+.vscode/
