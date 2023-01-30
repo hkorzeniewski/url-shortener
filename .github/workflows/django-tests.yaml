@@ -33,6 +33,7 @@ jobs:
       - name: Install poetry
         run: |
           pip install poetry
+
       - name: Poetry config
         run: |
             poetry config virtualenvs.create false
@@ -42,6 +43,7 @@ jobs:
       - name: Run linters
         run: |
             make linters
+
       - name: Run tests
         env:
           REDIS_HOST: 127.0.0.1
