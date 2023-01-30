@@ -7,7 +7,9 @@ RUN mkdir /code
 WORKDIR /code
 RUN pip3 install poetry
 COPY poetry.lock pyproject.toml /code/
-RUN poetry install --no-root
+
+RUN poetry config virtualenvs.create false \
+    && poetry install --no-root --no-interaction 
 
 COPY . /code/
 

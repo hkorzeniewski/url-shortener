@@ -33,18 +33,15 @@ jobs:
       - name: Install poetry
         run: |
           pip install poetry
+      - name: Poetry config
+        run: |
+            poetry config virtualenvs.create false
       - name: Install requirements
         run: |
             poetry install --no-root
-      - name: Run black
+      - name: Run linters
         run: |
-            poetry run black *.py
-      - name: Run isort
-        run: |
-            poetry run isort .
-      - name: Run bandit
-        run: |
-            poetry run bandit -r .
+            make linters
       - name: Run tests
         env:
           REDIS_HOST: 127.0.0.1
