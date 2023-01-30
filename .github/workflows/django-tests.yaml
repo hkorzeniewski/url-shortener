@@ -12,11 +12,6 @@ on:
 jobs:
   simple_build:
     runs-on: ubuntu-latest
-    env:
-      DJANGO_SECRET_KEY: ${{ env.DJANGO_SECRET_KEY }}
-      DEBUG: ${{ env.DJANGO_DEBUG}}
-      REDIS_HOST: ${{ env.REDIS_HOST }}
-      REDIS_PORT: ${{ env.REDIS_PORT }}
     services:
       redis:
         image: redis:alpine
@@ -47,9 +42,9 @@ jobs:
             poetry run bandit -r
       - name: Run tests
         env:
-          DJANGO_SECRET_KEY: ${{ env.DJANGO_SECRET_KEY }}
-          DEBUG: ${{ env.DJANGO_DEBUG}}
-          REDIS_HOST: ${{ env.REDIS_HOST }}
-          REDIS_PORT: ${{ env.REDIS_PORT }}
+          DJANGO_SECRET_KEY: random_key
+          DEBUG: True
+          REDIS_HOST: 127.0.0.1
+          REDIS_PORT: 6379
         run: |
             poetry run coverage run manage.py test
