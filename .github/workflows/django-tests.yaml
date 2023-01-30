@@ -50,7 +50,7 @@ jobs:
             DJANGO_SECRET_KEY: random_key
             DEBUG: True
         run: |
-            redis-server
+            redis-server start
       - name: Run tests
        
         run: |
