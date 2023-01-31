@@ -135,8 +135,7 @@ REDIS_HOST = env("REDIS_HOST", default="127.0.0.1")
 REDIS_PORT = env("REDIS_PORT")
 
 CACHES = {
-    "default": {
-        
+    "default": {        
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": "redis://{}:{}/1".format(REDIS_HOST, REDIS_PORT),
         "OPTIONS": {
