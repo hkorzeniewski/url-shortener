@@ -27,3 +27,4 @@ tests:
 
 bumpversion:
 	bumpversion --message '[skip ci] Bump version: {current_version} → {new_version}' --list --verbose $(part)
+	
