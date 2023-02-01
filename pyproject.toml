@@ -15,16 +15,15 @@ django-redis = "^5.2.0"
 django-environ = "^0.9.0"
 django-fakeredis = "^0.1.2"
 
+[tool.poetry.group.dev.dependencies]
+coverage = "^7.1.0"
 pycodestyle = "^2.10.0"
 black = "^22.12.0"
 bandit = "^1.7.4"
 isort = "^5.12.0"
 shed = "^0.10.8"
 autoflake = "^2.0.0"
-
-
-[tool.poetry.group.dev.dependencies]
-coverage = "^7.1.0"
+flake8 = "^6.0.0"
 
 [build-system]
 requires = ["poetry-core"]
