@@ -21,7 +21,7 @@ python-versions = ">=3.6"
 name = "autoflake"
 version = "2.0.0"
 description = "Removes unused imports and unused variables"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -33,7 +33,7 @@ tomli = {version = ">=2.0.1", markers = "python_version < \"3.11\""}
 name = "bandit"
 version = "1.7.4"
 description = "Security oriented static analyser for python code."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -52,7 +52,7 @@ yaml = ["PyYAML"]
 name = "black"
 version = "22.12.0"
 description = "The uncompromising code formatter."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -68,6 +68,25 @@ colorama = ["colorama (>=0.4.3)"]
 d = ["aiohttp (>=3.7.4)"]
 jupyter = ["ipython (>=7.8.0)", "tokenize-rt (>=3.2.0)"]
 uvloop = ["uvloop (>=0.15.2)"]
+
+[[package]]
+name = "bump2version"
+version = "1.0.1"
+description = "Version-bump your software with a single command!"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[[package]]
+name = "bumpversion"
+version = "0.6.0"
+description = "Version-bump your software with a single command!"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+bump2version = "*"
 
 [[package]]
 name = "certifi"
@@ -89,7 +108,7 @@ python-versions = "*"
 name = "click"
 version = "8.1.3"
 description = "Composable command line interface toolkit"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -100,7 +119,7 @@ colorama = {version = "*", markers = "platform_system == \"Windows\""}
 name = "colorama"
 version = "0.4.6"
 description = "Cross-platform colored terminal text."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 
@@ -108,7 +127,7 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7
 name = "com2ann"
 version = "0.3.0"
 description = "Tool to translate type comments to annotations."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.8"
 
@@ -213,7 +232,7 @@ lua = ["lupa (>=1.14,<2.0)"]
 name = "flake8"
 version = "6.0.0"
 description = "the modular source code checker: pep8 pyflakes and co"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.8.1"
 
@@ -226,7 +245,7 @@ pyflakes = ">=3.0.0,<3.1.0"
 name = "gitdb"
 version = "4.0.10"
 description = "Git Object Database"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -237,7 +256,7 @@ smmap = ">=3.0.1,<6"
 name = "gitpython"
 version = "3.1.30"
 description = "GitPython is a python library used to interact with Git repositories"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -256,7 +275,7 @@ python-versions = ">=3.5"
 name = "isort"
 version = "5.12.0"
 description = "A Python utility / library to sort Python imports."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.8.0"
 
@@ -270,7 +289,7 @@ requirements-deprecated-finder = ["pip-api", "pipreqs"]
 name = "libcst"
 version = "0.4.9"
 description = "A concrete syntax tree with AST-like properties for Python 3.5, 3.6, 3.7, 3.8, 3.9, and 3.10 programs."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -286,7 +305,7 @@ dev = ["Sphinx (>=5.1.1)", "black (==22.10.0)", "coverage (>=4.5.4)", "fixit (==
 name = "mccabe"
 version = "0.7.0"
 description = "McCabe checker, plugin for flake8"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -294,7 +313,7 @@ python-versions = ">=3.6"
 name = "mypy-extensions"
 version = "0.4.3"
 description = "Experimental type system extensions for programs checked with the mypy typechecker."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -302,7 +321,7 @@ python-versions = "*"
 name = "pathspec"
 version = "0.11.0"
 description = "Utility library for gitignore style pattern matching of file paths."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -310,7 +329,7 @@ python-versions = ">=3.7"
 name = "pbr"
 version = "5.11.1"
 description = "Python Build Reasonableness"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.6"
 
@@ -318,7 +337,7 @@ python-versions = ">=2.6"
 name = "platformdirs"
 version = "2.6.2"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -330,7 +349,7 @@ test = ["appdirs (==1.4.4)", "covdefaults (>=2.2.2)", "pytest (>=7.2)", "pytest-
 name = "pycodestyle"
 version = "2.10.0"
 description = "Python style guide checker"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -338,7 +357,7 @@ python-versions = ">=3.6"
 name = "pyflakes"
 version = "3.0.1"
 description = "passive checker of Python programs"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -369,7 +388,7 @@ python-versions = "*"
 name = "pyupgrade"
 version = "3.3.1"
 description = "A tool to automatically upgrade syntax for newer versions."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -380,7 +399,7 @@ tokenize-rt = ">=3.2.0"
 name = "pyyaml"
 version = "6.0"
 description = "YAML parser and emitter for Python"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -421,7 +440,7 @@ use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 name = "shed"
 version = "0.10.8"
 description = "`shed` canonicalises Python code."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -437,7 +456,7 @@ pyupgrade = ">=3.0.0"
 name = "smmap"
 version = "5.0.0"
 description = "A pure Python implementation of a sliding window memory map manager"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -461,7 +480,7 @@ python-versions = ">=3.5"
 name = "stevedore"
 version = "4.1.1"
 description = "Manage dynamic plugins for Python applications"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.8"
 
@@ -472,7 +491,7 @@ pbr = ">=2.0.0,<2.1.0 || >2.1.0"
 name = "tokenize-rt"
 version = "5.0.0"
 description = "A wrapper around the stdlib `tokenize` which roundtrips."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -480,7 +499,7 @@ python-versions = ">=3.7"
 name = "tomli"
 version = "2.0.1"
 description = "A lil' TOML parser"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -488,7 +507,7 @@ python-versions = ">=3.7"
 name = "typing-extensions"
 version = "4.4.0"
 description = "Backported and Experimental Type Hints for Python 3.7+"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -496,7 +515,7 @@ python-versions = ">=3.7"
 name = "typing-inspect"
 version = "0.8.0"
 description = "Runtime inspection utilities for typing module."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -528,7 +547,8 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "280d681fb2dfdedfff3e44a061c26f5bcc53743398747160408dd05b422d7bb9"
+content-hash = "cf9dab579b723357fd3f0d863ef5ad27cae7df035857be40c0069e112797685f"
+
 
 [metadata.files]
 asgiref = [
@@ -560,6 +580,14 @@ black = [
     {file = "black-22.12.0-cp39-cp39-win_amd64.whl", hash = "sha256:559c7a1ba9a006226f09e4916060982fd27334ae1998e7a38b3f33a37f7a2148"},
     {file = "black-22.12.0-py3-none-any.whl", hash = "sha256:436cc9167dd28040ad90d3b404aec22cedf24a6e4d7de221bec2730ec0c97bcf"},
     {file = "black-22.12.0.tar.gz", hash = "sha256:229351e5a18ca30f447bf724d007f890f97e13af070bb6ad4c0a441cd7596a2f"},
+]
+bump2version = [
+    {file = "bump2version-1.0.1-py2.py3-none-any.whl", hash = "sha256:37f927ea17cde7ae2d7baf832f8e80ce3777624554a653006c9144f8017fe410"},
+    {file = "bump2version-1.0.1.tar.gz", hash = "sha256:762cb2bfad61f4ec8e2bdf452c7c267416f8c70dd9ecb1653fd0bbb01fa936e6"},
+]
+bumpversion = [
+    {file = "bumpversion-0.6.0-py2.py3-none-any.whl", hash = "sha256:4eb3267a38194d09f048a2179980bb4803701969bff2c85fa8f6d1ce050be15e"},
+    {file = "bumpversion-0.6.0.tar.gz", hash = "sha256:4ba55e4080d373f80177b4dabef146c07ce73c7d1377aabf9d3c3ae1f94584a6"},
 ]
 certifi = [
     {file = "certifi-2022.12.7-py3-none-any.whl", hash = "sha256:4ad3232f5e926d6718ec31cfc1fcadfde020920e278684144551c91769c7bc18"},
