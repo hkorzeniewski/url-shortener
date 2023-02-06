@@ -52,8 +52,8 @@ jobs:
           DEBUG: True
         run: |
             poetry run coverage run manage.py test
-        - name: bumpversion
-          run: |
+      - name: bumpversion
+        run: |
             [ ${branch} = main ] && export PART=minor
             pip install bumpversion
             echo ${branch}
@@ -61,13 +61,13 @@ jobs:
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
             bumpversion --message '[skip ci] Bump version: {current_version} → {new_version}' --list --verbose ${PART}
-        - name: Push changes
-          uses: ad-m/github-push-action@master
-          with:
-            github_token: ${{ secrets.GIT_TOKEN }}
-            branch: ${{ github.ref }}
-            tags: true
-            force: true
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GIT_TOKEN }}
+          branch: ${{ github.ref }}
+          tags: true
+          force: true
 
   ecr:
     runs-on: ubuntu-latest
