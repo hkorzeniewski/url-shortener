@@ -68,6 +68,7 @@ jobs:
             branch: ${{ github.ref }}
             tags: true
             force: true
+
   ecr:
     runs-on: ubuntu-latest
     name: builr and deploy to AWS ECR
@@ -105,3 +106,4 @@ jobs:
       #     docker tag urlshortener:latest \ $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
       #     docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
     
+
