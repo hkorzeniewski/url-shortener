@@ -22,6 +22,7 @@ name = "autoflake"
 version = "2.0.0"
 description = "Removes unused imports and unused variables"
 category = "dev"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -547,7 +548,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "cf9dab579b723357fd3f0d863ef5ad27cae7df035857be40c0069e112797685f"
+content-hash = "280d681fb2dfdedfff3e44a061c26f5bcc53743398747160408dd05b422d7bb9"
 
 [metadata.files]
 asgiref = [
