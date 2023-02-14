@@ -20,7 +20,7 @@ def encode_url(request, url):
     shortened_url = cache.get(url)
     if shortened_url is None:
         shortener = pyshorteners.Shortener()
-        shortened_url = shortener.chilpit.short(f"{url}")
+        shortened_url = shortener.clckru.short(f"{url}")
         cache.set(url, shortened_url)
     data_to_dump = {
         "original_url": url,
@@ -38,7 +38,7 @@ def decode_url(request, url):
     original_url = cache.get(url)
     if original_url is None:
         shortener = pyshorteners.Shortener()
-        original_url = shortener.chilpit.expand(f"{url}")
+        original_url = shortener.clckru.expand(f"{url}")
         cache.set(url, original_url)
 
     data_to_dump = {
