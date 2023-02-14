@@ -62,7 +62,7 @@ jobs:
             echo ${PART}
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
-            bumpversion --list minor setup.py
+            bumpversion --list minor setup.cfg
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
