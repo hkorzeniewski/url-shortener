@@ -13,7 +13,7 @@ class EncodingTest(TestCase):
     def setUp(self) -> None:
         shortener = pyshorteners.Shortener()
         self.url_to_encode = "test"
-        self.shortened_url = shortener.chilpit.short(f"{self.url_to_encode}")
+        self.shortened_url = shortener.clckru.short(f"{self.url_to_encode}")
         self.response_without_url = self.client.get("http://localhost:8000/encode/")
         self.response_with_url = self.client.get(
             f"http://localhost:8000/encode/{self.url_to_encode}"
@@ -46,8 +46,8 @@ class EncodingTest(TestCase):
 class DecodingTest(TestCase):
     def setUp(self) -> None:
         shortener = pyshorteners.Shortener()
-        self.url_to_decode = "http://chilp.it/d6bb5dd"
-        self.expanded_url = shortener.chilpit.expand(f"{self.url_to_decode}")
+        self.url_to_decode = "https://clck.ru/PIjA"
+        self.expanded_url = shortener.clckru.expand(f"{self.url_to_decode}")
         self.response_without_url = self.client.get("http://localhost:8000/decode/")
         self.response_with_url = self.client.get(
             f"http://localhost:8000/decode/{self.url_to_decode}"
