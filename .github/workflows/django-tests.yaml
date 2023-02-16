@@ -7,11 +7,11 @@ on:
   push:
     branches: 
       - 'main'
-      - 'feature/fix_bumpversion'
+
   pull_request:
     branches: 
       - 'main'
-      - 'feature/fix_bumpversion'
+
 
 jobs:
   simple_build:
@@ -71,7 +71,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GIT_TOKEN }}
-          branch: feature/fix_bumpversion
+          branch: ${{ github.ref }}
           tags: true
           force: true
   ecr:
