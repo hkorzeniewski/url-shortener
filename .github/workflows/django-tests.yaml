@@ -5,9 +5,13 @@ on:
   workflow_call:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: 
+      - 'main'
+      - 'feature/fix_bumpversion'
   pull_request:
-    branches: [main]
+    branches: 
+      - 'main'
+      - 'feature/fix_bumpversion'
 
 jobs:
   simple_build:
