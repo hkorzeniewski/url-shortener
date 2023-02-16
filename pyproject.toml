@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "url-shortener"
-version = "0.2.0"
+version = "0.3.0"
 description = ""
 authors = ["hkorzeniewski <56238495+hkorzeniewski@users.noreply.github.com>"]
 readme = "README.md"
